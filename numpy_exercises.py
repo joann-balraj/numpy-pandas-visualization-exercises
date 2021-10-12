@@ -7,7 +7,8 @@ negative = [num for num in a if num < 0]
 print(len(negative))
 
 # 2. How many positive numbers are there?
-positive = [num for num in a if num > 0]
+positive = a[a > 0]
+#positive = [num for num in a if num > 0]
 print(len(positive))
 
 # 3. How many even positive numbers are there?
@@ -28,7 +29,9 @@ print(mean)
 print(std)
 
 # 6. A common statistical operation on a dataset is centering. This means to adjust the data such that the mean of the data is 0. This is done by subtracting the mean from each data point. Center the data set. See this link for more on centering.
+mean_a = [num.mean() for num in a]
+print(mean_a)
+mean_a = np.array(mean_a)
+print(mean_a.mean())
 
-#7. Calculate the z-score for each data point.
-zscore = [(num - mean)/std for num in a]
-print(zscore)
+# 7. Calculate the z-score for each data point. Recall that the z-score is given by:
