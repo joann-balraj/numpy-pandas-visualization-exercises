@@ -15,9 +15,8 @@ positive_even = a[(a > 0) & (a % 2 == 0)]
 print(len(positive_even))
 
 # 4. If you were to add 3 to each data point, how many positive numbers would there be?
-plus_three = [num + 3 for num in a]
-plus_three_pos_count = [num for num in plus_three if num > 0]
-print(len(plus_three_pos_count))
+plus_three = a + 3
+print(len(plus_three[plus_three > 0]))
 
 # 5. If you squared each number, what would the new mean and standard deviation be?
 squared = [num ** 2 for num in a]
