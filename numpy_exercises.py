@@ -3,16 +3,15 @@ a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
 
 
 # 1. How many negative numbers are there?
-negative = [num for num in a if num < 0]
+negative = a[a < 0]
 print(len(negative))
 
 # 2. How many positive numbers are there?
-positive = a[a > 0]
-#positive = [num for num in a if num > 0]
+positive = a[(a > 0) & (a % 2 == 0)]
 print(len(positive))
 
 # 3. How many even positive numbers are there?
-positive_even = [num for num in a if num > 0 and num % 2 == 0]
+positive_even = a[(a > 0) & (a % 2 == 0)]
 print(len(positive_even))
 
 # 4. If you were to add 3 to each data point, how many positive numbers would there be?
@@ -34,7 +33,7 @@ print(mean_a)
 a_minus_mean_a = np.array([num - mean_a for num in a])
 print(a_minus_mean_a)
 is_a_centered = a_minus_mean_a.mean()
-print(is_a_centered)
+print(is_a_centered, ' is_a_centered equals 0, so a is centered')
 
 # 7. Calculate the z-score for each data point. Recall that the z-score is given by:
 zscore = [(num - mean_a)/a.std() for num in a]
