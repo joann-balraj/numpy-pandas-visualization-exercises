@@ -29,9 +29,13 @@ print(mean)
 print(std)
 
 # 6. A common statistical operation on a dataset is centering. This means to adjust the data such that the mean of the data is 0. This is done by subtracting the mean from each data point. Center the data set. See this link for more on centering.
-mean_a = [num.mean() for num in a]
+mean_a = a.mean()
 print(mean_a)
-mean_a = np.array(mean_a)
-print(mean_a.mean())
+a_minus_mean_a = np.array([num - mean_a for num in a])
+print(a_minus_mean_a)
+is_a_centered = a_minus_mean_a.mean()
+print(is_a_centered)
 
 # 7. Calculate the z-score for each data point. Recall that the z-score is given by:
+zscore = [(num - mean_a)/a.std() for num in a]
+print(zscore)
